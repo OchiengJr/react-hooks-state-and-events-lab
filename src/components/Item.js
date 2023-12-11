@@ -11,6 +11,7 @@ function Item({ name, category }) {
     <li className={addedInCart ? "in-cart" : ""}>
       <span>{name}</span>
       <span className="category">{category}</span>
+      {/* Dynamically label the "Add to Cart" button */}
       <button className="add" onClick={handleAddingToCart}>
         {addedInCart ? "Remove from Cart" : "Add to Cart"}
       </button>
@@ -19,3 +20,4 @@ function Item({ name, category }) {
 }
 
 export default Item;
+
