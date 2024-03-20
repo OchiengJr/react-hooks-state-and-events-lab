@@ -1,19 +1,22 @@
 import React, { useState } from "react";
 
 function Item({ name, category }) {
-  const [addedInCart, setAddedInCart] = useState(false);
+  // Use more descriptive state variable name
+  const [isAddedToCart, setIsAddedToCart] = useState(false);
 
-  function handleAddingToCart() {
-    setAddedInCart((added) => !added);
+  // Use a more descriptive function name
+  function handleToggleCart() {
+    // Use functional form of setState for previous state dependency
+    setIsAddedToCart((prevAdded) => !prevAdded);
   }
 
   return (
-    <li className={addedInCart ? "in-cart" : ""}>
+    <li className={isAddedToCart ? "in-cart" : ""}>
       <span>{name}</span>
       <span className="category">{category}</span>
-      {/* Dynamically label the "Add to Cart" button */}
-      <button className="add" onClick={handleAddingToCart}>
-        {addedInCart ? "Remove from Cart" : "Add to Cart"}
+      {/* Use a more descriptive label for the button */}
+      <button className="add" onClick={handleToggleCart}>
+        {isAddedToCart ? "Remove from Cart" : "Add to Cart"}
       </button>
     </li>
   );

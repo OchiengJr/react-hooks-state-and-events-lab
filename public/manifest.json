@@ -1,6 +1,8 @@
 {
   "short_name": "React App",
   "name": "Create React App Sample",
+  "description": "A sample React web app",
+  "lang": "en",
   "icons": [
     {
       "src": "favicon.ico",
